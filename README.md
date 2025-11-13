@@ -19,10 +19,10 @@
 
 ```mermaid
 graph TD
-    A[PDF \nSeoul_Dasan.pdf\nremdoc.pdf] --> B[Docling\nPDF to Markdown]
-    B --> C[MarkdownHeaderTextSplitter\n헤더 기준 청크 분할]
-    C --> D[GPT-4o API\n청크당 3개 질문 생성]
-    D --> E[12480개 QA 페어\nquestion + chunk + doc_id + page]
-    E --> F[MongoDB Atlas\nrag_testset 컬렉션]
-    E --> G[ChromaDB\npersistent DB]
-    E --> H[MongoDB Community\nvector index]
+    A[PDF] --> B[Docling, PDF to Markdown]
+    B --> C[MarkdownHeaderTextSplitter 헤더 기준 청크 분할]
+    C --> D[GPT-4o API 청크당 3개 질문 생성]
+    D --> E[12480개 QA 페어 question + chunk + doc_id + page]
+    E --> F[MongoDB Atlas rag_testset 컬렉션]
+    E --> G[ChromaDB persistent DB]
+    E --> H[MongoDB Community vector index]
