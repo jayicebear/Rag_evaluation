@@ -25,8 +25,8 @@ Chroma DB 와 Mongo DB 의 RAG 정확도 비교한 벤치마크 코드입니다.
 graph TD
     A[PDF] --> B[Docling PDF->Markdown]
     B --> C[MarkdownHeaderTextSplitter 헤더 기준 청크 분할]
-    C --> D[GPT-4o miniAPI 청크당 3개 질문 생성]
+    C --> D[GPT API 청크당 질문 생성]
     D --> E[12480개 QA 페어 question + chunk + doc_id + page]
-    E --> F[MongoDB Atlas rag_testset 컬렉션]
-    E --> G[ChromaDB persistent DB]
-    E --> H[MongoDB Community vector index]
+    E --> F[MongoDB Atlas]
+    E --> G[ChromaDB]
+    E --> H[MongoDB Community]
