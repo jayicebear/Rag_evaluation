@@ -23,7 +23,7 @@ Chroma DB 와 Mongo DB 의 RAG 정확도 비교한 벤치마크 코드입니다.
 
 ```mermaid
 graph TD
-    A[PDF] --> B[Docling(PDF to Markdown)]
+    A[PDF] --> B[Docling(PDF->Markdown)]
     B --> C[MarkdownHeaderTextSplitter 헤더 기준 청크 분할]
     C --> D[GPT-4o miniAPI 청크당 3개 질문 생성]
     D --> E[12480개 QA 페어 question + chunk + doc_id + page]
