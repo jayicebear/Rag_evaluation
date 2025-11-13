@@ -2,8 +2,7 @@
 
 ## 프로젝트 개요
  PDF를 기반으로 **RAG 테스트셋**을 자동 생성하고,  
-Chroma DB 와 Mongo DB 의 RAG 정확도 비교 코드입니다. 
-+ Query Rewriting 기법을 체계적으로 비교한 벤치마크 코드입니다.  
+Chroma DB 와 Mongo DB 의 RAG 정확도 비교한 벤치마크 코드입니다.(+Query Rewriting 기법)  
 
 
 - **임베딩 모델**: `Qwen/Qwen3-Embedding-0.6B`
