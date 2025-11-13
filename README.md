@@ -19,7 +19,7 @@
 
 ```mermaid
 graph TD
-    A[PDF <br/>Seoul_Dasan.pdf<br/>remdoc.pdf] --> B[Docling<br/>PDF to Markdown]
+    A[PDF 데이터 <br/>Seoul_Dasan.pdf<br/>remdoc.pdf] --> B[Docling<br/>PDF to Markdown]
     B --> C[MarkdownHeaderTextSplitter<br/>헤더 기준 청크 분할]
     C --> D[GPT-4o API<br/>청크당 3개 질문 생성]
     D --> E[12,480개 QA 페어<br/>{question, chunk, doc_id, page}]
