@@ -1,14 +1,10 @@
 # 온프레미스 RAG 평가 프레임워크 (RAG Evaluation Benchmark)
 
 ## 프로젝트 개요
-실제 논문 PDF 2편을 기반으로 **고품질 RAG 테스트셋**을 자동 생성하고,  
+ PDF를 기반으로 **고품질 RAG 테스트셋**을 자동 생성하고,  
 다양한 Vector DB + 검색 전략 + Query Rewriting 기법을 체계적으로 비교한 벤치마크 코드입니다.  
 
-- **테스트셋 문서**  
-  1. `Seoul_Dasan.pdf` – 한국어 ASR 오류 수정 (20페이지)  
-  2. `remdoc.pdf` – REMDoC 의료 요약 평가 (9페이지)  
-- **총 청크 수**: 1,248개  
-- **생성된 QA 페어**: **12,480건** (청크당 3개 질문 × 1,248 × 3.3배 여유)  
+
 - **임베딩 모델**: `Qwen/Qwen3-Embedding-0.6B` (동일 조건 보장)  
 - **비교 대상 DB**  
   - MongoDB Atlas Vector Search  
@@ -23,7 +19,7 @@
 
 ```mermaid
 graph TD
-    A[PDF 2건] --> B[Docling<br/>PDF → Markdown]
+    A[pdf] --> B[Docling<br/>PDF → Markdown]
     B --> C[MarkdownHeaderTextSplitter<br/>헤더 기준 청크]
     C --> D[GPT-4o<br/>청크당 3개 질문 생성]
     D --> E[12,480 QA 페어<br/>{question, chunk, doc_id}]
