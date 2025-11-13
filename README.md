@@ -5,7 +5,7 @@
 다양한 Vector DB + 검색 전략 + Query Rewriting 기법을 체계적으로 비교한 벤치마크 코드입니다.  
 
 
-- **임베딩 모델**: `Qwen/Qwen3-Embedding-0.6B` (동일 조건 보장)  
+- **임베딩 모델**: `Qwen/Qwen3-Embedding-0.6B`
 - **비교 대상 DB**  
   - MongoDB Atlas Vector Search  
   - MongoDB Community (Aggregation $vectorSearch)  
@@ -19,8 +19,10 @@
 
 ```mermaid
 graph TD
-    A[pdf] --> B[Docling<br/>PDF → Markdown]
-    B --> C[MarkdownHeaderTextSplitter<br/>헤더 기준 청크]
-    C --> D[GPT-4o<br/>청크당 3개 질문 생성]
-    D --> E[12,480 QA 페어<br/>{question, chunk, doc_id}]
+    A[PDF <br/>Seoul_Dasan.pdf<br/>remdoc.pdf] --> B[Docling<br/>PDF to Markdown]
+    B --> C[MarkdownHeaderTextSplitter<br/>헤더 기준 청크 분할]
+    C --> D[GPT-4o API<br/>청크당 3개 질문 생성]
+    D --> E[12,480개 QA 페어<br/>{question, chunk, doc_id, page}]
     E --> F[MongoDB Atlas<br/>rag_testset 컬렉션]
+    E --> G[ChromaDB<br/>persistent DB]
+    E --> H[MongoDB Community<br/>vector index]
